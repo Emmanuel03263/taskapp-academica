@@ -1,0 +1,59 @@
+<ion-header class="form-header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nueva tarea</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <section class="intro">
+    <span>Registro academico</span>
+    <h1>Completa los datos de la tarea</h1>
+    <p>El titulo debe tener al menos 5 caracteres. La prioridad ayuda a ordenar lo urgente.</p>
+  </section>
+
+  <form [formGroup]="formulario" (ngSubmit)="guardarTarea()" class="formulario">
+    <ion-item class="campo">
+      <ion-input
+        label="Titulo"
+        label-placement="floating"
+        formControlName="titulo"
+        autocomplete="off"
+        placeholder="Ejemplo: Resolver practica de matematicas"
+      ></ion-input>
+    </ion-item>
+    @if (mostrarError('titulo')) {
+      <ion-note color="danger">
+        El titulo es obligatorio y debe tener al menos 5 caracteres.
+      </ion-note>
+    }
+
+    <ion-item class="campo">
+      <ion-textarea
+        label="Descripcion corta"
+        label-placement="floating"
+        formControlName="descripcion"
+        autoGrow="true"
+        rows="4"
+        autocomplete="off"
+        placeholder="Escribe una descripcion breve"
+      ></ion-textarea>
+    </ion-item>
+    @if (mostrarError('descripcion')) {
+      <ion-note color="danger">
+        Escribe una descripcion breve de la tarea.
+      </ion-note>
+    }
+
+    <div class="acciones">
+      <ion-button expand="block" type="submit">
+        Guardar tarea
+      </ion-button>
+      <ion-button expand="block" fill="outline" color="medium" type="button" (click)="cancelar()">
+        Cancelar
+      </ion-button>
+    </div>
+  </form>
+</ion-content>
