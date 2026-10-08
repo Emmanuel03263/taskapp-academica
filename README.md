@@ -2,31 +2,17 @@
 
 Aplicacion movil hibrida creada con Ionic y Angular para gestionar tareas academicas con una interfaz moderna, validaciones, filtros, progreso visual y persistencia local.
 
-## ¿Qué es este proyecto?
+## Descripcion
 
 TaskApp Academica es una app para que un estudiante pueda registrar, visualizar, completar y eliminar tareas del dia a dia. El objetivo de la practica es demostrar manejo de componentes Ionic, formularios reactivos en Angular, paso de datos entre vista y logica, servicio Angular y persistencia local.
 
 La interfaz incluye un resumen superior tipo dashboard, tarjetas de metricas, barra de progreso, filtros por estado, listado movil, pagina de registro y acciones de completar/eliminar.
 
-## Frontend y backend
-
-Este proyecto **solo tiene frontend**.
-
-- **Frontend:** Ionic + Angular. Es la aplicacion visual que se abre en el navegador o en un entorno movil.
-- **Backend:** no se implementa porque la practica no lo pide. No hay API, servidor Node, base de datos externa ni autenticacion.
-- **Persistencia:** se usa `localStorage`, que guarda las tareas en el navegador. Esto cumple el punto extra sugerido por el enunciado.
-
-Si el profesor pidiera login, usuarios, sincronizacion entre dispositivos o administracion centralizada, ahi si haria falta backend. Para este supuesto practico, no.
-
 ## Tecnologías usadas
 
 - **Ionic:** framework de componentes visuales para construir interfaces moviles hibridas. Aqui se usan `ion-header`, `ion-content`, `ion-list`, `ion-item`, `ion-badge`, `ion-checkbox`, `ion-fab`, `ion-progress-bar` e `ion-footer`.
 - **Angular:** framework que maneja la logica de la app, los componentes, el formulario reactivo, las validaciones, los signals y el servicio de tareas.
-- **localStorage:** almacenamiento local del navegador. No es una base de datos externa, pero cumple el punto extra de persistencia para esta practica.
-
-## ¿Hace falta base de datos?
-
-No. El enunciado marca la persistencia como opcional/puntos extra y propone `localStorage`. Por eso el proyecto guarda las tareas en el navegador mediante un servicio Angular. Para esta practica no hace falta MySQL, PostgreSQL, MongoDB, Firebase ni backend.
+- **localStorage:** almacenamiento local del navegador utilizado para conservar las tareas registradas.
 
 ## Requisitos
 
@@ -64,12 +50,6 @@ Si tienes Ionic instalado globalmente, tambien puedes usar:
 ```bash
 ionic serve
 ```
-
-## Ejecutar backend
-
-No hay backend que encender. La app no necesita servidor de datos porque guarda la informacion en `localStorage`.
-
-Por eso **no existe** un comando como `npm run start:backend`.
 
 ## Generar build
 

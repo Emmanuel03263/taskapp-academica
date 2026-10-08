@@ -141,7 +141,7 @@ def build_pdf():
         ),
         paragraph("1. Que pide la practica", h1),
         paragraph(
-            "La practica pide construir una aplicacion movil donde un estudiante pueda ver, crear, marcar como completadas y eliminar tareas academicas. No pide login, servidor, API ni base de datos externa. Por eso el proyecto se resolvio como frontend Ionic/Angular con persistencia local.",
+            "La practica pide construir una aplicacion movil hibrida donde un estudiante pueda ver, crear, marcar como completadas y eliminar tareas academicas. El desarrollo se realizo con Ionic y Angular, aplicando componentes moviles, formularios reactivos, servicio Angular y persistencia local.",
             body,
         ),
         bullets(
@@ -159,36 +159,8 @@ def build_pdf():
             ],
             body,
         ),
-        paragraph("2. Aclaracion: Ionic, Angular y TaskApp", h1),
-        paragraph(
-            "<b>Ionic</b> no es una base de datos. Ionic es un framework de componentes visuales para crear aplicaciones moviles hibridas con aspecto de app movil. Da componentes como barras, listas, botones flotantes, checkboxes y badges.",
-            body,
-        ),
-        paragraph(
-            "<b>Angular</b> es el framework que controla la logica de la aplicacion: componentes, formularios, validaciones, servicios, rutas y estado de los datos.",
-            body,
-        ),
-        paragraph(
-            "<b>TaskApp</b> es el nombre de la aplicacion que se debe crear. En este proyecto se llama TaskApp Academica porque esta enfocada en tareas escolares o academicas.",
-            body,
-        ),
-        paragraph("3. Frontend, backend y base de datos", h1),
-        paragraph(
-            "Este proyecto solo tiene frontend. El frontend es la aplicacion visual creada con Ionic y Angular. No hay backend porque el enunciado no solicita API, servidor, autenticacion ni administracion centralizada de datos.",
-            body,
-        ),
-        bullets(
-            [
-                "No hace falta MySQL, PostgreSQL, MongoDB ni Firebase.",
-                "No hace falta crear backend o API.",
-                "No existe un comando para encender backend porque no hay backend en esta practica.",
-                "Si el profesor pidiera usuarios, login o sincronizacion entre celulares, ahi si haria falta backend y base de datos.",
-                "Aqui basta con un servicio Angular que lea y escriba el arreglo de tareas en localStorage.",
-            ],
-            body,
-        ),
         PageBreak(),
-        paragraph("4. Estructura del proyecto", h1),
+        paragraph("2. Estructura del proyecto", h1),
         paragraph(
             "El proyecto se organizo con una estructura clara para separar configuracion, modelo de datos, servicio y pagina principal.",
             body,
@@ -226,7 +198,7 @@ def build_pdf():
                 ]
             ),
         ),
-        paragraph("5. Modelo de datos", h1),
+        paragraph("3. Modelo de datos", h1),
         paragraph(
             "Se definio una interfaz TypeScript para asegurar que todas las tareas tengan la misma forma. Esto ayuda a evitar errores y cumple el requisito del modelo de datos.",
             body,
@@ -235,7 +207,7 @@ def build_pdf():
             "export interface Tarea {<br/>  id: number;<br/>  titulo: string;<br/>  descripcion: string;<br/>  prioridad: 'Alta' | 'Media' | 'Baja';<br/>  completada: boolean;<br/>}",
             code,
         ),
-        paragraph("6. Servicio de tareas", h1),
+        paragraph("4. Servicio de tareas", h1),
         paragraph(
             "El servicio TareasService es el lugar donde se maneja el arreglo de tareas. Tiene metodos para agregar, cambiar estado y eliminar. Ademas, guarda los cambios en localStorage.",
             body,
@@ -251,7 +223,7 @@ def build_pdf():
             body,
         ),
         PageBreak(),
-        paragraph("7. Interfaz principal", h1),
+        paragraph("5. Interfaz principal", h1),
         paragraph(
             "La pantalla principal se diseno como una app movil academica: cabecera limpia, hero con resumen del dia, barra de progreso, tarjetas de metricas, filtros por estado, lista de tareas y acceso a una pagina de registro.",
             body,
@@ -272,7 +244,7 @@ def build_pdf():
             ],
             body,
         ),
-        paragraph("8. Formulario reactivo", h1),
+        paragraph("6. Formulario reactivo", h1),
         paragraph(
             "El formulario esta en una pagina independiente llamada nueva-tarea. Se usa ReactiveFormsModule para controlar campos y validaciones desde TypeScript.",
             body,
@@ -286,7 +258,7 @@ def build_pdf():
             ],
             body,
         ),
-        paragraph("9. Paso a paso de desarrollo", h1),
+        paragraph("7. Paso a paso de desarrollo", h1),
         numbered(
             [
                 "Crear la carpeta del proyecto y abrirla en Visual Studio Code.",
@@ -302,22 +274,20 @@ def build_pdf():
             ],
             body,
         ),
-        paragraph("10. Comandos necesarios", h1),
+        paragraph("8. Comandos necesarios", h1),
         paragraph("Instalar dependencias:", body),
         paragraph("npm install", code),
         paragraph("Ejecutar en desarrollo:", body),
         paragraph("npm run start", code),
         paragraph("Ejecutar el frontend con nombre explicito:", body),
         paragraph("npm run start:frontend", code),
-        paragraph("Backend:", body),
-        paragraph("No hay backend que encender en esta practica.", code),
         paragraph("Tambien puede ejecutarse directamente si se usa Ionic CLI:", body),
         paragraph("ionic serve", code),
         paragraph("Generar build de produccion:", body),
         paragraph("npm run build", code),
         paragraph("Generar build del frontend con nombre explicito:", body),
         paragraph("npm run build:frontend", code),
-        paragraph("11. Entrega recomendada", h1),
+        paragraph("9. Entrega recomendada", h1),
         bullets(
             [
                 "Subir el proyecto a GitHub sin la carpeta node_modules.",
@@ -327,7 +297,7 @@ def build_pdf():
             ],
             body,
         ),
-        paragraph("12. Checklist final", h1),
+        paragraph("10. Checklist final", h1),
         bullets(
             [
                 "La app tiene interfaz Ionic completa.",
@@ -342,20 +312,9 @@ def build_pdf():
             ],
             body,
         ),
-        paragraph("13. Como defender el proyecto", h1),
-        bullets(
-            [
-                "Si preguntan por backend: explicar que no se implemento porque el enunciado no lo pide; la persistencia solicitada se resolvio con localStorage.",
-                "Si preguntan por base de datos: explicar que localStorage funciona como almacenamiento local del navegador para esta practica.",
-                "Si preguntan por Ionic: explicar que aporta los componentes moviles usados en la interfaz.",
-                "Si preguntan por Angular: explicar que maneja la logica, formularios reactivos, validaciones, signals y servicios.",
-                "Si preguntan por ejecucion: npm install instala dependencias y npm run start enciende el frontend.",
-            ],
-            body,
-        ),
         Spacer(1, 10),
         paragraph(
-            "Conclusion: el proyecto cumple lo pedido sin usar backend ni base de datos externa. La persistencia se resolvio con localStorage, y la interfaz se mejoro para que parezca una aplicacion movil academica terminada.",
+            "Conclusion: el proyecto cumple los requerimientos de la practica mediante una aplicacion movil hibrida desarrollada con Ionic y Angular, organizada por componentes, servicio, modelo de datos, formulario reactivo y persistencia local.",
             small,
         ),
     ]
